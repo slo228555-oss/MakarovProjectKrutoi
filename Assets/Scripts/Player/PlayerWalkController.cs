@@ -40,6 +40,14 @@ void OnCollisionEnter2D(Collision2D collision)
     void Move()
 {
     float moveX = Input.GetAxisRaw("Horizontal");
+     if (moveX > 0)
+        {
+            transform.localScale = new Vector3(1, 2, 1); // Смотрим вправо
+        }
+        else if (moveX < 0)
+        {
+            transform.localScale = new Vector3(-1, 2, 1); // Смотрим влево
+        }
     
     // Двигаемся только по X, Y всегда 0
     rb.linearVelocity = new Vector2(moveX * speed, rb.linearVelocityY);
@@ -49,9 +57,11 @@ void OnCollisionEnter2D(Collision2D collision)
     {
         Move();
       
+      
        if (Input.GetKey(KeyCode.Space) && isGrounded == true)
         {
             rb.AddForce(Vector2.up * forceJump, ForceMode2D.Force);
         }
     }
 }
+
