@@ -1,20 +1,17 @@
 using UnityEngine;
 
-public class HitboxDamage : MonoBehaviour
+public class Hitbox : MonoBehaviour
 {
-  
     public int damage = 10; // У каждого СВОЙ урон (можно менять в инспекторе!)
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("Player"))
+        if ( other.CompareTag("Player"))
         {
             // Просто говорим цели: "получи урон"
             other.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             
-            // Уничтожаем снаряд (если это пуля/шарик)
-            Destroy(gameObject);
+          
         }
     }
-
 }

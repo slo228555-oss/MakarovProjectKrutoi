@@ -189,6 +189,24 @@ Transform:
   - {fileID: 1538800209}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332709838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2991965986534256587, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
+  m_PrefabInstance: {fileID: 531404464810858791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &332709839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332709838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb74bfd61f70cd943b4c07987338b1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &397038336
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,8 +220,8 @@ GameObject:
   - component: {fileID: 397038339}
   - component: {fileID: 397038338}
   - component: {fileID: 397038337}
-  - component: {fileID: 397038342}
   - component: {fileID: 397038343}
+  - component: {fileID: 397038342}
   - component: {fileID: 397038344}
   m_Layer: 0
   m_Name: player
@@ -413,7 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b8339fbcd10fe4e916b7f4d28d451d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
 --- !u!1 &402898439
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +443,7 @@ GameObject:
   - component: {fileID: 402898441}
   - component: {fileID: 402898440}
   - component: {fileID: 402898443}
+  - component: {fileID: 402898444}
   m_Layer: 0
   m_Name: AttackHitbox
   m_TagString: AttackHitbox
@@ -571,6 +589,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &402898444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402898439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4027886f41f4104aa814348784ef478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &467823457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1055,7 @@ GameObject:
   - component: {fileID: 774871738}
   - component: {fileID: 774871737}
   - component: {fileID: 774871736}
+  - component: {fileID: 774871740}
   m_Layer: 0
   m_Name: DownHitbox
   m_TagString: AttackHitbox
@@ -1169,6 +1201,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 397038341}
   m_LocalEulerAnglesHint: {x: -0.019, y: -1.205, z: -90}
+--- !u!114 &774871740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774871735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4027886f41f4104aa814348784ef478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
 --- !u!1 &827849582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1226,7 @@ GameObject:
   - component: {fileID: 827849585}
   - component: {fileID: 827849584}
   - component: {fileID: 827849583}
+  - component: {fileID: 827849587}
   m_Layer: 0
   m_Name: UpHitbox
   m_TagString: AttackHitbox
@@ -1326,6 +1372,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 397038341}
   m_LocalEulerAnglesHint: {x: -0.019, y: -1.205, z: -90}
+--- !u!114 &827849587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827849582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4027886f41f4104aa814348784ef478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
 --- !u!1 &928437907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2991965986534256587, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5765928971689164504, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
       propertyPath: m_TagString
       value: AttackHitbox
@@ -2088,10 +2151,14 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 397038336}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3582044861116349313, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2991965986534256587, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 332709839}
     - targetCorrespondingSourceObject: {fileID: 5765928971689164504, guid: 9d524430b2140f847bdee2887f74ba3a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1583926151}
@@ -2111,6 +2178,10 @@ PrefabInstance:
     - target: {fileID: 4954405462983422383, guid: 4b96170632c0d6b4182e27a35890708f, type: 3}
       propertyPath: m_Name
       value: FlyEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954405462983422383, guid: 4b96170632c0d6b4182e27a35890708f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5542603241059717743, guid: 4b96170632c0d6b4182e27a35890708f, type: 3}
       propertyPath: m_LocalPosition.x
